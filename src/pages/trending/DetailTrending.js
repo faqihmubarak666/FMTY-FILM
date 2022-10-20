@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import "../../style/detailTrending.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-import { getTrailerTrending } from "../ServiceApi";
+import { getTrailerTrending } from "./ServiceTrending";
 import TrailerTrending from "./TrailerTrending";
 import Moment from "react-moment";
 
@@ -19,7 +19,7 @@ class DetailTrending extends Component {
 
   trailerTrending = (id) => {
     getTrailerTrending(id).then((response) => {
-      const result = response.results[0];
+      const result = response.data.results[0];
       this.props.GetTrailerTrendingId(result);
       this.setState({
         modalTrailer: !this.state.modalTrailer,

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getComingsoon, getDetailComingsoon } from "../ServiceApi";
+import { getComingsoon, getDetailComingsoon } from "./ServiceComingsoon";
 import ListComingsoon from "./ListComingsoon";
 import { connect } from "react-redux";
 

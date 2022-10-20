@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getTrending, getDetailTrending } from "../ServiceApi";
+import { getTrendingService, getDetailTrending } from "./ServiceTrending";
 import ListTrending from "./ListTrending";
 import { connect } from "react-redux";
 
@@ -9,15 +9,15 @@ class TrendingContainer extends Component {
   }
 
   loadData = () => {
-    getTrending().then((response) => {
-      const result = response.results;
+    getTrendingService().then((res) => {
+      const result = res.data.results;
       this.props.GetTrending(result);
     });
   };
 
   detailTrending = (id) => {
     getDetailTrending(id).then((response) => {
-      const result = response;
+      const result = response.data;
       this.props.GetDetailTrendingId(result);
     });
     this.props.Showbar(true);

@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import "../../style/detailTrending.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-import { getTrailerTrending } from "../ServiceApi";
+import { getTrailerComingsoon } from "./ServiceComingsoon";
 import TrailerTrending from "./TrailerComingsoon";
 import Moment from "react-moment";
 
@@ -18,7 +18,7 @@ class DetailComingsoon extends Component {
   }
 
   trailerTrending = (id) => {
-    getTrailerTrending(id).then((response) => {
+    getTrailerComingsoon(id).then((response) => {
       const result = response.results[0];
       console.log("trailer", result);
       this.props.GetTrailerTrendingId(result);
